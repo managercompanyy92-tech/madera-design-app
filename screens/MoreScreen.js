@@ -1,34 +1,106 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
-export default function MoreScreen() {
+export default function MoreScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Ещё</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>Дополнительно</Text>
       <Text style={styles.subtitle}>
-        Здесь будут разделы: О компании, Партнёрам, Акции, Контакты, Условия оплаты и многое другое.
+        Здесь собраны важные разделы о компании, условиях и сервисе.
       </Text>
-    </View>
+
+      <View style={styles.list}>
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('TimelineScreen')}
+        >
+          <Text style={styles.itemTitle}>Сроки выполнения</Text>
+          <Text style={styles.itemText}>
+            Узнайте, за какой срок мы изготовим и установим вашу мебель.
+          </Text>
+        </TouchableOpacity>
+
+        <View style={styles.itemDisabled}>
+          <Text style={styles.itemTitle}>Документы</Text>
+          <Text style={styles.itemText}>
+            Договор, акт приёма-передачи, гарантийный талон (будет добавлено).
+          </Text>
+        </View>
+
+        <View style={styles.itemDisabled}>
+          <Text style={styles.itemTitle}>Партнёрам</Text>
+          <Text style={styles.itemText}>
+            Условия партнёрской программы и выплаты 5% (будет добавлено).
+          </Text>
+        </View>
+
+        <View style={styles.itemDisabled}>
+          <Text style={styles.itemTitle}>Оформить кредит</Text>
+          <Text style={styles.itemText}>
+            Расчёт рассрочки и условий оплаты (будет добавлено).
+          </Text>
+        </View>
+
+        <View style={styles.itemDisabled}>
+          <Text style={styles.itemTitle}>О компании</Text>
+          <Text style={styles.itemText}>
+            Философия Madera Design и подход к современному интерьеру (будет добавлено).
+          </Text>
+        </View>
+
+        <View style={styles.itemDisabled}>
+          <Text style={styles.itemTitle}>Контакты</Text>
+          <Text style={styles.itemText}>
+            Телефон, WhatsApp, Telegram, Instagram, Facebook (будет добавлено).
+          </Text>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#2B2B2B',
     paddingHorizontal: 20,
-    justifyContent: 'center',
-    alignItems: 'center'
+    paddingVertical: 24,
+    flexGrow: 1
   },
   title: {
     color: '#D4B89B',
-    fontSize: 26,
+    fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 16,
-    textAlign: 'center'
+    marginBottom: 10
   },
   subtitle: {
     color: '#CCCCCC',
+    fontSize: 14,
+    marginBottom: 20
+  },
+  list: {
+    gap: 12
+  },
+  item: {
+    backgroundColor: '#3A3A3A',
+    borderRadius: 14,
+    padding: 14,
+    borderWidth: 1,
+    borderColor: '#D4B89B'
+  },
+  itemDisabled: {
+    backgroundColor: '#3A3A3A',
+    borderRadius: 14,
+    padding: 14,
+    borderWidth: 1,
+    borderColor: '#444'
+  },
+  itemTitle: {
+    color: '#FFFFFF',
     fontSize: 16,
-    textAlign: 'center'
+    fontWeight: 'bold',
+    marginBottom: 4
+  },
+  itemText: {
+    color: '#CCCCCC',
+    fontSize: 13
   }
 });
