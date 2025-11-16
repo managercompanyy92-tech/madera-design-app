@@ -39,17 +39,20 @@ export default function MoreScreen({ navigation }) {
           </Text>
         </TouchableOpacity>
 
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('DocumentsScreen')}
+        >
+          <Text style={styles.itemTitle}>Документы</Text>
+          <Text style={styles.itemText}>
+            Договор, акт приёма-передачи, гарантийный талон и юридические условия.
+          </Text>
+        </TouchableOpacity>
+
         <View style={styles.itemDisabled}>
           <Text style={styles.itemTitle}>Оформить кредит</Text>
           <Text style={styles.itemText}>
             Расчёт рассрочки и условий оплаты (будет добавлено).
-          </Text>
-        </View>
-
-        <View style={styles.itemDisabled}>
-          <Text style={styles.itemTitle}>Документы</Text>
-          <Text style={styles.itemText}>
-            Договор, акт приёма-передачи, гарантийный талон (будет добавлено).
           </Text>
         </View>
 
