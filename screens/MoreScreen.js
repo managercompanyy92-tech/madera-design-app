@@ -33,13 +33,13 @@ export default function MoreScreen({ navigation }) {
           style={styles.item}
           onPress={() => navigation.navigate('PartnersScreen')}
         >
-          <Text style={styles.itemTitle}>Партнёрам</Text>
+          <Text style={styles.itemTitle}>Партнёрская программа</Text>
           <Text style={styles.itemText}>
-            Условия партнёрской программы и выплаты 5% за каждого привлечённого клиента.
+            Условия партнёрства и выплаты 5% за каждого привлечённого клиента.
           </Text>
         </TouchableOpacity>
 
-        <View className="itemDisabled" style={styles.itemDisabled}>
+        <View style={styles.itemDisabled}>
           <Text style={styles.itemTitle}>Оформить кредит</Text>
           <Text style={styles.itemText}>
             Расчёт рассрочки и условий оплаты (будет добавлено).
@@ -53,12 +53,15 @@ export default function MoreScreen({ navigation }) {
           </Text>
         </View>
 
-        <View style={styles.itemDisabled}>
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('ContactsScreen')}
+        >
           <Text style={styles.itemTitle}>Контакты</Text>
           <Text style={styles.itemText}>
-            Телефон, WhatsApp, Telegram, Instagram, Facebook (будет добавлено).
+            Телефон, WhatsApp, Telegram, Instagram и Facebook для связи с нами.
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
