@@ -20,7 +20,10 @@ export default function LoginScreen({ navigation }) {
         secureTextEntry
       />
 
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={() => navigation.navigate('MainTabs')}
+      >
         <Text style={styles.loginButtonText}>Войти</Text>
       </TouchableOpacity>
 
