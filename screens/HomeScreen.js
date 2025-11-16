@@ -15,7 +15,9 @@ export default function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate('Catalog')}
         >
           <Text style={styles.actionTitle}>Каталог</Text>
-          <Text style={styles.actionText}>Посмотрите идеи современных кухонь, спален и гостиных.</Text>
+          <Text style={styles.actionText}>
+            Посмотрите идеи современных кухонь, спален и гостиных.
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -23,17 +25,31 @@ export default function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate('Order')}
         >
           <Text style={styles.actionTitle}>Рассчитать стоимость</Text>
-          <Text style={styles.actionText}>Узнайте ориентировочную стоимость мебели за пару минут.</Text>
+          <Text style={styles.actionText}>
+            Узнайте ориентировочную стоимость мебели за пару минут.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.actionCard}
+          onPress={() => navigation.navigate('WorksScreen')}
+        >
+          <Text style={styles.actionTitle}>Наши работы</Text>
+          <Text style={styles.actionText}>
+            В будущем здесь будут реальные проекты, выполненные для клиентов в Душанбе.
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.actionCard}
           onPress={() => {
-            // пока просто текст, позже сделаем переход в WhatsApp / Telegram
+            // Здесь позже можно будет открыть WhatsApp или Telegram
           }}
         >
           <Text style={styles.actionTitle}>Онлайн-консультация</Text>
-          <Text style={styles.actionText}>Получите ответы на вопросы по вашему интерьеру.</Text>
+          <Text style={styles.actionText}>
+            Получите ответы на вопросы по вашему интерьеру и заказу.
+          </Text>
         </TouchableOpacity>
       </View>
 
@@ -46,7 +62,7 @@ export default function HomeScreen({ navigation }) {
         </Text>
         <TouchableOpacity
           style={styles.partnerButton}
-          onPress={() => navigation.navigate('More')}
+          onPress={() => navigation.navigate('PartnersScreen')}
         >
           <Text style={styles.partnerButtonText}>Стать партнёром</Text>
         </TouchableOpacity>
@@ -75,13 +91,13 @@ const styles = StyleSheet.create({
     marginBottom: 25
   },
   quickActions: {
-    marginBottom: 30
+    marginBottom: 30,
+    gap: 12
   },
   actionCard: {
     backgroundColor: '#3A3A3A',
     borderRadius: 14,
     padding: 16,
-    marginBottom: 12,
     borderWidth: 1,
     borderColor: '#444'
   },
