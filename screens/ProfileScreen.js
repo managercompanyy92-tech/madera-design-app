@@ -14,7 +14,8 @@ export default function ProfileScreen({ navigation }) {
       <View style={styles.block}>
         <Text style={styles.blockTitle}>Мои данные</Text>
         <Text style={styles.blockText}>
-          В будущем здесь будут отображаться ваше имя, номер телефона и промокод (если вы партнёр Madera Design).
+          В будущем здесь будут отображаться ваше имя, номер телефона и промокод
+          (если вы партнёр Madera Design).
         </Text>
       </View>
 
@@ -28,9 +29,7 @@ export default function ProfileScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => {
-            // позже здесь откроем отдельный экран статуса заказов
-          }}
+          onPress={() => navigation.navigate('OrderStatusScreen')}
         >
           <Text style={styles.buttonText}>Перейти к статусу заказов</Text>
         </TouchableOpacity>
@@ -39,16 +38,14 @@ export default function ProfileScreen({ navigation }) {
       <View style={styles.block}>
         <Text style={styles.blockTitle}>Партнёрский кабинет</Text>
         <Text style={styles.blockText}>
-          • Список клиентов, которые оформили заказ по вашему промокоду.{'\n'}
+          • Список клиентов, оформивших заказ по вашему промокоду.{'\n'}
           • Сумма заказов и размер начисленных 5% вознаграждений.{'\n'}
           • История переводов на вашу карту.
         </Text>
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => {
-            // позже здесь откроем отдельный экран для партнёров
-          }}
+          onPress={() => navigation.navigate('PartnersScreen')}
         >
           <Text style={styles.buttonText}>Открыть партнёрский кабинет</Text>
         </TouchableOpacity>
@@ -73,7 +70,7 @@ export default function ProfileScreen({ navigation }) {
       </View>
 
       <Text style={styles.note}>
-        На следующем этапе разработки сюда будет добавлена авторизация, реальные данные пользователя, 
+        На следующем этапе разработки сюда будет добавлена авторизация, реальные данные пользователя,
         список заказов и интеграция с партнёрской системой.
       </Text>
     </ScrollView>
