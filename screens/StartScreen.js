@@ -1,20 +1,32 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 export default function StartScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>Madera Design</Text>
+      {/* Логотип */}
+      <Image
+        source={require('../assets/images/logo.png')}
+        style={styles.logoImage}
+        resizeMode="contain"
+      />
 
-      <Text style={styles.title}>
-        Добро пожаловать!
-      </Text>
+      {/* Фото модели */}
+      <Image
+        source={require('../assets/images/model.png')}
+        style={styles.modelImage}
+        resizeMode="cover"
+      />
+
+      {/* Текст */}
+      <Text style={styles.title}>Добро пожаловать!</Text>
 
       <Text style={styles.subtitle}>
         Войдите в мир мебели, которая меняет пространство
         и впечатляет с первого взгляда!
       </Text>
 
-      <TouchableOpacity 
+      {/* Кнопка продолжения */}
+      <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('LoginScreen')}
       >
@@ -32,10 +44,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 20
   },
-  logo: {
-    color: '#D4B89B',
-    fontSize: 28,
-    fontWeight: 'bold',
+  logoImage: {
+    width: 160,
+    height: 80,
+    marginBottom: 20
+  },
+  modelImage: {
+    width: 220,
+    height: 220,
+    borderRadius: 110,
     marginBottom: 30
   },
   title: {
