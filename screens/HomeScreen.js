@@ -1,6 +1,12 @@
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Linking } from 'react-native';
+
+const WHATSAPP_URL = 'https://wa.me/992012900303';
 
 export default function HomeScreen({ navigation }) {
+  const openWhatsApp = () => {
+    Linking.openURL(WHATSAPP_URL).catch(() => {});
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.hello}>Добро пожаловать в Madera Design</Text>
@@ -42,13 +48,11 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.actionCard}
-          onPress={() => {
-            // Здесь позже можно будет открыть WhatsApp или Telegram
-          }}
+          onPress={openWhatsApp}
         >
           <Text style={styles.actionTitle}>Онлайн-консультация</Text>
           <Text style={styles.actionText}>
-            Получите ответы на вопросы по вашему интерьеру и заказу.
+            Напишите нам в WhatsApp, чтобы задать вопросы по заказу и материалам.
           </Text>
         </TouchableOpacity>
       </View>
