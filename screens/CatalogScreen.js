@@ -285,7 +285,6 @@ const ITEMS = {
     }
   ],
 
-  // Остальные категории пока с простыми текстовыми идеями.
   bedroom: [
     {
       id: 'b1',
@@ -382,7 +381,12 @@ export default function CatalogScreen({ navigation }) {
       {/* Карточки идей */}
       <View style={styles.cards}>
         {items.map((item) => (
-          <View key={item.id} style={styles.card}>
+          <TouchableOpacity
+            key={item.id}
+            style={styles.card}
+            activeOpacity={0.9}
+            onPress={() => navigation.navigate('CatalogDetailScreen', { item })}
+          >
             {item.image ? (
               <Image
                 source={item.image}
@@ -418,7 +422,7 @@ export default function CatalogScreen({ navigation }) {
                 <Text style={styles.buttonPrimaryText}>Заказать</Text>
               </TouchableOpacity>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
     </ScrollView>
