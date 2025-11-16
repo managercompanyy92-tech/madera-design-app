@@ -45,7 +45,7 @@ export default function ProfileScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('PartnersScreen')}
+          onPress={() => navigation.navigate('PartnerDashboardScreen')}
         >
           <Text style={styles.buttonText}>Открыть партнёрский кабинет</Text>
         </TouchableOpacity>
