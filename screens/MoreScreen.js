@@ -25,7 +25,7 @@ export default function MoreScreen({ navigation }) {
         >
           <Text style={styles.itemTitle}>О компании</Text>
           <Text style={styles.itemText}>
-            Кто мы, в чём наш подход и чем Madera Design отличается от других.
+            Кто мы, наш подход и чем Madera Design отличается от других.
           </Text>
         </TouchableOpacity>
 
@@ -81,6 +81,16 @@ export default function MoreScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.item}
+          onPress={() => navigation.navigate('PromotionsScreen')}
+        >
+          <Text style={styles.itemTitle}>Акции</Text>
+          <Text style={styles.itemText}>
+            Специальные предложения, сезонные скидки и выгоды для клиентов.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.item}
           onPress={() => navigation.navigate('ContactsScreen')}
         >
           <Text style={styles.itemTitle}>Контакты</Text>
@@ -127,8 +137,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 4
   },
-  itemText: {
-    color: '#CCCCCC',
-    fontSize: 13
-  }
-});
