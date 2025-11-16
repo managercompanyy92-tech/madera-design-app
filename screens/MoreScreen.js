@@ -49,12 +49,15 @@ export default function MoreScreen({ navigation }) {
           </Text>
         </TouchableOpacity>
 
-        <View style={styles.itemDisabled}>
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('CreditScreen')}
+        >
           <Text style={styles.itemTitle}>Оформить кредит</Text>
           <Text style={styles.itemText}>
-            Расчёт рассрочки и условий оплаты (будет добавлено).
+            Калькулятор рассрочки: до 6, 12 или 18 месяцев с учётом процентов.
           </Text>
-        </View>
+        </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.item}
@@ -97,13 +100,6 @@ const styles = StyleSheet.create({
     padding: 14,
     borderWidth: 1,
     borderColor: '#D4B89B'
-  },
-  itemDisabled: {
-    backgroundColor: '#3A3A3A',
-    borderRadius: 14,
-    padding: 14,
-    borderWidth: 1,
-    borderColor: '#444'
   },
   itemTitle: {
     color: '#FFFFFF',
