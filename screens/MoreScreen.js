@@ -41,6 +41,16 @@ export default function MoreScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.item}
+          onPress={() => navigation.navigate('MaterialsScreen')}
+        >
+          <Text style={styles.itemTitle}>Материалы</Text>
+          <Text style={styles.itemText}>
+            ЛДСП (Россия), МДФ (Турция), фурнитура российских производителей и Blum.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.item}
           onPress={() => navigation.navigate('DocumentsScreen')}
         >
           <Text style={styles.itemTitle}>Документы</Text>
