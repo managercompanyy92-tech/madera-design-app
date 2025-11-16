@@ -25,7 +25,7 @@ export default function MoreScreen({ navigation }) {
         >
           <Text style={styles.itemTitle}>О компании</Text>
           <Text style={styles.itemText}>
-            Узнайте, кто мы, в чём наш подход и чем Madera Design отличается от других.
+            Кто мы, в чём наш подход и чем Madera Design отличается от других.
           </Text>
         </TouchableOpacity>
 
@@ -66,6 +66,16 @@ export default function MoreScreen({ navigation }) {
           <Text style={styles.itemTitle}>Оформить кредит</Text>
           <Text style={styles.itemText}>
             Калькулятор рассрочки: до 6, 12 или 18 месяцев с учётом процентов.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('PaymentTermsScreen')}
+        >
+          <Text style={styles.itemTitle}>Условия оплаты</Text>
+          <Text style={styles.itemText}>
+            Безналичная оплата, 100% предоплата, оплата замера и подтверждение платежей.
           </Text>
         </TouchableOpacity>
 
