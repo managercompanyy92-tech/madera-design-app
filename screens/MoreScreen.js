@@ -51,6 +51,16 @@ export default function MoreScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.item}
+          onPress={() => navigation.navigate('DesignScreen')}
+        >
+          <Text style={styles.itemTitle}>Дизайн</Text>
+          <Text style={styles.itemText}>
+            Индивидуальные дизайн-проекты мебели только для подтверждённых заказов.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.item}
           onPress={() => navigation.navigate('DocumentsScreen')}
         >
           <Text style={styles.itemTitle}>Документы</Text>
@@ -137,3 +147,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 4
   },
+  itemText: {
+    color: '#CCCCCC',
+    fontSize: 13
+  }
+});
