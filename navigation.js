@@ -10,6 +10,7 @@ import AboutScreen from './screens/AboutScreen';
 import PartnersScreen from './screens/PartnersScreen';
 import ContactsScreen from './screens/ContactsScreen';
 import DocumentsScreen from './screens/DocumentsScreen';
+import CreditScreen from './screens/CreditScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,7 @@ export default function Navigation() {
         <Stack.Screen name="PartnersScreen" component={PartnersScreen} />
         <Stack.Screen name="ContactsScreen" component={ContactsScreen} />
         <Stack.Screen name="DocumentsScreen" component={DocumentsScreen} />
+        <Stack.Screen name="CreditScreen" component={CreditScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
