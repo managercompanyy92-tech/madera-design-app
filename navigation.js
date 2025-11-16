@@ -5,6 +5,7 @@ import StartScreen from './screens/StartScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import MainTabs from './MainTabs';
+import TimelineScreen from './screens/TimelineScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ export default function Navigation() {
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
+        <Stack.Screen name="TimelineScreen" component={TimelineScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
