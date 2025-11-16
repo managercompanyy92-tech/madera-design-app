@@ -19,6 +19,16 @@ export default function MoreScreen({ navigation }) {
           </Text>
         </TouchableOpacity>
 
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('AboutScreen')}
+        >
+          <Text style={styles.itemTitle}>О компании</Text>
+          <Text style={styles.itemText}>
+            Узнайте, кто мы, в чём наш подход и чем Madera Design отличается от других.
+          </Text>
+        </TouchableOpacity>
+
         <View style={styles.itemDisabled}>
           <Text style={styles.itemTitle}>Документы</Text>
           <Text style={styles.itemText}>
@@ -37,13 +47,6 @@ export default function MoreScreen({ navigation }) {
           <Text style={styles.itemTitle}>Оформить кредит</Text>
           <Text style={styles.itemText}>
             Расчёт рассрочки и условий оплаты (будет добавлено).
-          </Text>
-        </View>
-
-        <View style={styles.itemDisabled}>
-          <Text style={styles.itemTitle}>О компании</Text>
-          <Text style={styles.itemText}>
-            Философия Madera Design и подход к современному интерьеру (будет добавлено).
           </Text>
         </View>
 
