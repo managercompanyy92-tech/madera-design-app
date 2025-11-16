@@ -16,8 +16,6 @@ import MaterialsScreen from './screens/MaterialsScreen';
 import PaymentTermsScreen from './screens/PaymentTermsScreen';
 import PromotionsScreen from './screens/PromotionsScreen';
 import OrderStatusScreen from './screens/OrderStatusScreen';
-import PartnerDashboardScreen from './screens/PartnerDashboardScreen';
-import DesignScreen from './screens/DesignScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,9 +42,7 @@ export default function Navigation() {
         <Stack.Screen name="PaymentTermsScreen" component={PaymentTermsScreen} />
         <Stack.Screen name="PromotionsScreen" component={PromotionsScreen} />
         <Stack.Screen name="OrderStatusScreen" component={OrderStatusScreen} />
-        <Stack.Screen name="PartnerDashboardScreen" component={PartnerDashboardScreen} />
-        <Stack.Screen name="DesignScreen" component={DesignScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+        }
