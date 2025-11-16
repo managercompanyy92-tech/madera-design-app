@@ -1,34 +1,126 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Главная</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.hello}>Добро пожаловать в Madera Design</Text>
       <Text style={styles.subtitle}>
-        Здесь скоро будет красивый, функциональный главный экран Madera Design.
+        Мебель, которая меняет пространство и впечатляет с первого взгляда.
       </Text>
-    </View>
+
+      {/* Быстрые действия */}
+      <View style={styles.quickActions}>
+        <TouchableOpacity
+          style={styles.actionCard}
+          onPress={() => navigation.navigate('Catalog')}
+        >
+          <Text style={styles.actionTitle}>Каталог</Text>
+          <Text style={styles.actionText}>Посмотрите идеи современных кухонь, спален и гостиных.</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.actionCard}
+          onPress={() => navigation.navigate('Order')}
+        >
+          <Text style={styles.actionTitle}>Рассчитать стоимость</Text>
+          <Text style={styles.actionText}>Узнайте ориентировочную стоимость мебели за пару минут.</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.actionCard}
+          onPress={() => {
+            // пока просто текст, позже сделаем переход в WhatsApp / Telegram
+          }}
+        >
+          <Text style={styles.actionTitle}>Онлайн-консультация</Text>
+          <Text style={styles.actionText}>Получите ответы на вопросы по вашему интерьеру.</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Баннер партнёрской программы */}
+      <View style={styles.partnerBanner}>
+        <Text style={styles.partnerTitle}>Партнёрская программа</Text>
+        <Text style={styles.partnerText}>
+          Приводите клиентов и зарабатывайте{' '}
+          <Text style={{ fontWeight: 'bold' }}>5% от суммы каждого заказа.</Text>
+        </Text>
+        <TouchableOpacity
+          style={styles.partnerButton}
+          onPress={() => navigation.navigate('More')}
+        >
+          <Text style={styles.partnerButtonText}>Стать партнёром</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#2B2B2B',
     paddingHorizontal: 20,
-    justifyContent: 'center',
-    alignItems: 'center'
+    paddingVertical: 30,
+    backgroundColor: '#2B2B2B',
+    flexGrow: 1
   },
-  title: {
+  hello: {
     color: '#D4B89B',
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 16,
-    textAlign: 'center'
+    marginBottom: 10,
+    textAlign: 'left'
   },
   subtitle: {
     color: '#CCCCCC',
     fontSize: 16,
-    textAlign: 'center'
+    marginBottom: 25
+  },
+  quickActions: {
+    marginBottom: 30
+  },
+  actionCard: {
+    backgroundColor: '#3A3A3A',
+    borderRadius: 14,
+    padding: 16,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: '#444'
+  },
+  actionTitle: {
+    color: '#D4B89B',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 6
+  },
+  actionText: {
+    color: '#DDDDDD',
+    fontSize: 14
+  },
+  partnerBanner: {
+    backgroundColor: '#D4B89B',
+    borderRadius: 18,
+    padding: 18,
+    marginBottom: 20
+  },
+  partnerTitle: {
+    color: '#2B2B2B',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 6
+  },
+  partnerText: {
+    color: '#2B2B2B',
+    fontSize: 14,
+    marginBottom: 10
+  },
+  partnerButton: {
+    backgroundColor: '#2B2B2B',
+    paddingVertical: 10,
+    borderRadius: 10,
+    alignItems: 'center'
+  },
+  partnerButtonText: {
+    color: '#D4B89B',
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 });
